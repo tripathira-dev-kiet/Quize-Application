@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Competition</title>
+    <style>
+        .question{
+            border: 2px solid;
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+                    }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz Competition</h1>
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div id="q1" class="question">
+            <label><b>Question No. 1</b></label><br><br>
+            <b>1. </b>Who is PM of INDIA?<br><br>
+            <input type="radio" name="q1" value="Narendra Modi">Narendra Modi<br>
+            <input type="radio" name="q1" value="Yogi Adityanath">Yogi Adityanath<br>
+            <input type="radio" name="q1" value="Amit Shah">Amit Shah<br>
+            <input type="radio" name="q1" value="Amitabh Bachchan">Amitabh Bachchan<br><br>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="showNext(1, 2)">Next</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="q2" class="question">
+            <label><b>Question No. 2</b></label><br><br>
+            <b>2. </b>What is the capital of India?<br><br>
+            <input type="radio" name="q2" value="Mumbai">Mumbai<br>
+            <input type="radio" name="q2" value="New Delhi">New Delhi<br>
+            <input type="radio" name="q2" value="Kolkata">Kolkata<br>
+            <input type="radio" name="q2" value="Chennai">Chennai<br><br>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="showNext(2, 3)">Next</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="q3" class="question" >
+            <label><b>Question No. 3</b></label><br><br>
+            <b>3. </b>Which is the national bird of India?<br><br>
+            <input type="radio" name="q3" value="Peacock">Peacock<br>
+            <input type="radio" name="q3" value="Crow">Crow<br>
+            <input type="radio" name="q3" value="Pigeon">Pigeon<br>
+            <input type="radio" name="q3" value="Eagle">Eagle<br><br>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="showNext(3, 4)">Next</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="q4" class="question">
+            <label><b>Question No. 4</b></label><br><br>
+            <b>4. </b>Which language is used for web scripting?<br><br>
+            <input type="radio" name="q4" value="C++">C++<br>
+            <input type="radio" name="q4" value="Java">Java<br>
+            <input type="radio" name="q4" value="JavaScript">JavaScript<br>
+            <input type="radio" name="q4" value="Python">Python<br><br>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="finishQuiz()">Finish</button>
+        </div>
+    </form>
+
+
+
+
+</body>
+</html>
