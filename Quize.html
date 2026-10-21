@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Competition</title>
-    <style>
-        .question{
-            border: 2px solid;
-            width: 50%;
-            text-align: center;
-            padding: 10px;
-                    }
-    </style>
 </head>
 <body>
 
@@ -19,7 +11,7 @@
 
     <form id="quizForm">
         <!-- Question 1 -->
-        <div id="q1" class="question">
+        <div id="q1">
             <label><b>Question No. 1</b></label><br><br>
             <b>1. </b>Who is PM of INDIA?<br><br>
             <input type="radio" name="q1" value="Narendra Modi">Narendra Modi<br>
@@ -31,7 +23,7 @@
         </div>
 
         <!-- Question 2 -->
-        <div id="q2" class="question">
+        <div id="q2" style="display: none;">
             <label><b>Question No. 2</b></label><br><br>
             <b>2. </b>What is the capital of India?<br><br>
             <input type="radio" name="q2" value="Mumbai">Mumbai<br>
@@ -43,7 +35,7 @@
         </div>
 
         <!-- Question 3 -->
-        <div id="q3" class="question" >
+        <div id="q3" style="display: none;">
             <label><b>Question No. 3</b></label><br><br>
             <b>3. </b>Which is the national bird of India?<br><br>
             <input type="radio" name="q3" value="Peacock">Peacock<br>
@@ -55,7 +47,7 @@
         </div>
 
         <!-- Question 4 -->
-        <div id="q4" class="question">
+        <div id="q4" style="display: none;">
             <label><b>Question No. 4</b></label><br><br>
             <b>4. </b>Which language is used for web scripting?<br><br>
             <input type="radio" name="q4" value="C++">C++<br>
@@ -67,8 +59,34 @@
         </div>
     </form>
 
+    <h2 id="result"></h2>
 
+    <script>
+    
+        function showNext(current, next) {
+            document.getElementById("q" + current).style.display = "none";
+            document.getElementById("q" + next).style.display = "block";
+        }
 
+     
+        function finishQuiz() {
+            let score = 0;
+
+            let ans1 = document.querySelector('input[name="q1"]:checked');
+            let ans2 = document.querySelector('input[name="q2"]:checked');
+            let ans3 = document.querySelector('input[name="q3"]:checked');
+            let ans4 = document.querySelector('input[name="q4"]:checked');
+
+            if (ans1 && ans1.value === "Narendra Modi") score++;
+            if (ans2 && ans2.value === "New Delhi") score++;
+            if (ans3 && ans3.value === "Peacock") score++;
+            if (ans4 && ans4.value === "JavaScript") score++;
+
+        
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("result").innerText = "Aapka Score: " + score + " / 4";
+        }
+    </script>
 
 </body>
 </html>
